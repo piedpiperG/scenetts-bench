@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SceneTTS-Bench</title>
+  <meta name="description" content="A benchmark for scene-level TTS in drama dubbing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body class="page-home">
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="./">SceneTTS-Bench</a>
+      <nav class="topnav">
+        <a href="#overview">Overview</a>
+        <a href="#metrics">Metrics</a>
+        <a href="./leaderboard/">Leaderboard</a>
+        <a href="./cases/">Cases</a>
+        <a href="./docs/">Docs</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">Scene-Level TTS Benchmark</p>
+          <h1>Benchmarking drama dubbing beyond the sentence level.</h1>
+          <p class="hero-text">
+            SceneTTS-Bench evaluates text-to-speech systems on speaker consistency,
+            emotional expressiveness, and rhythm coherence across multi-role dialogue scenes.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./docs/">Quick Start</a>
+            <a class="button button-secondary" href="#metrics">Explore Metrics</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="signal-grid">
+            <article class="signal-card">
+              <span class="signal-tag">SCS</span>
+              <h2>Speaker Consistency Score</h2>
+              <p>Measure timbre drift across the turns of the same character.</p>
+            </article>
+            <article class="signal-card">
+              <span class="signal-tag">UAR</span>
+              <h2>Under-Acting Ratio</h2>
+              <p>Detect whether dramatic lines are performed with insufficient emotional intensity.</p>
+            </article>
+            <article class="signal-card">
+              <span class="signal-tag">RDR</span>
+              <h2>Rate Discontinuity Ratio</h2>
+              <p>Capture rhythm jumps between segments split from long-form synthesis.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-grid">
+        <article class="info-card">
+          <p class="card-kicker">Why It Matters</p>
+          <h2>Drama dubbing fails at scene boundaries, not just sentence quality.</h2>
+          <p>
+            Existing TTS evaluation protocols focus on isolated utterances. SceneTTS-Bench
+            reframes evaluation around the failure modes that become visible only inside
+            multi-role dialogue scenes.
+          </p>
+        </article>
+        <article class="info-card accent-card">
+          <p class="card-kicker">Release Status</p>
+          <h2>First public site</h2>
+          <p>
+            This launch focuses on the benchmark identity and publication path first.
+            Leaderboards, audio cases, and full documentation can expand without changing the site structure.
+          </p>
+        </article>
+      </section>
+
+      <section class="section" id="metrics">
+        <div class="section-heading">
+          <p class="eyebrow">Core Metrics</p>
+          <h2>Three complementary views of scene-level performance</h2>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card">
+            <span class="metric-code">SCS</span>
+            <h3>Speaker Consistency</h3>
+            <p>Tracks whether a character keeps a stable voice identity throughout a scene.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-code">UAR</span>
+            <h3>Emotion Expressiveness</h3>
+            <p>Flags under-acted lines where dramatic tension is not delivered strongly enough.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-code">RDR</span>
+            <h3>Rhythm Coherence</h3>
+            <p>Measures local tempo discontinuities between neighboring long-form segments.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section portal-grid">
+        <article class="portal-card">
+          <div class="portal-head">
+            <p class="eyebrow">Leaderboard</p>
+            <a href="./leaderboard/">Open page</a>
+          </div>
+          <h2>Benchmark comparisons</h2>
+          <p>
+            The first release keeps this section ready for backend comparisons and result tables.
+            Use it as the canonical public entry for future evaluations.
+          </p>
+          <div class="placeholder-block">
+            <span>Results table will appear here</span>
+          </div>
+        </article>
+
+        <article class="portal-card">
+          <div class="portal-head">
+            <p class="eyebrow">Audio Cases</p>
+            <a href="./cases/">Open page</a>
+          </div>
+          <h2>Failure analysis and qualitative examples</h2>
+          <p>
+            Reserve this space for side-by-side listening cases, failure tags, and representative scene diagnostics.
+          </p>
+          <div class="placeholder-block">
+            <span>Audio case gallery will appear here</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="section docs-band">
+        <div>
+          <p class="eyebrow">Quick Start</p>
+          <h2>Move from project overview to usage docs</h2>
+        </div>
+        <div class="docs-steps">
+          <a class="step-card" href="./docs/">
+            <span>01</span>
+            <strong>Understand the benchmark scope</strong>
+          </a>
+          <a class="step-card" href="./docs/">
+            <span>02</span>
+            <strong>Prepare evaluation inputs</strong>
+          </a>
+          <a class="step-card" href="./docs/">
+            <span>03</span>
+            <strong>Run the benchmark pipeline</strong>
+          </a>
+        </div>
+      </section>
+
+      <section class="section citation-card" id="citation">
+        <p class="eyebrow">Citation</p>
+        <h2>Cite SceneTTS-Bench</h2>
+        <pre><code>@misc{geng2026scenettsbench,
+  title={SceneTTS-Bench: A Benchmark for Scene-Level TTS in Drama Dubbing},
+  author={Yizhong Geng and Yanliang Li and Jinghan Yang and Tianhan Jiang and Lexing Huang and Yingming Gao and Ya Li},
+  year={2026},
+  note={Project website placeholder release}
+}</code></pre>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>SceneTTS-Bench</p>
+      <p>Benchmark portal for scene-level TTS evaluation in drama dubbing.</p>
+      <p id="footer-year"></p>
+    </footer>
+  </div>
+
+  <script src="./assets/main.js"></script>
+</body>
+</html>
+
