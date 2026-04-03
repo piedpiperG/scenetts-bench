@@ -4,155 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SceneTTS-Bench</title>
-  <meta name="description" content="SceneTTS-Bench project page.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="SceneTTS-Bench project page for scene-level TTS evaluation in drama dubbing."
+  >
   <link rel="stylesheet" href="./assets/styles.css">
 </head>
-<body class="paper-page">
+<body>
   <div class="page-shell">
+    <header class="page-header">
+      <h1>SceneTTS-Bench: A Benchmark for Scene-Level TTS in Drama Dubbing</h1>
+      <nav class="resource-links" aria-label="Project links">
+        <a class="resource-link" href="https://github.com/piedpiperG/SceneTTS-Bench-Eval" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        <a class="resource-link" href="https://huggingface.co/datasets/isabeth/SceneTTS-Bench" target="_blank" rel="noreferrer">
+          Hugging Face
+        </a>
+      </nav>
+    </header>
+
     <main class="paper-layout">
-      <section class="hero-card">
-        <p class="eyebrow">Project Page</p>
-        <h1>SceneTTS-Bench: A Benchmark for Scene-Level TTS in Drama Dubbing</h1>
-        <p class="hero-subtitle">
-          SceneTTS-Bench is a scene-level benchmark for drama dubbing TTS, designed to
-          evaluate whether systems can preserve character identity, express dramatic tension,
-          and keep long-form rhythm coherent across multi-turn dialogue.
+      <section class="paper-section" aria-labelledby="abstract-title">
+        <h2 id="abstract-title">Abstract</h2>
+        <p>
+          Text-to-speech systems are increasingly used for drama dubbing, yet evaluation
+          protocols remain sentence-level, leaving critical scene-level behaviors insufficiently
+          measured. We present SceneTTS-Bench, a benchmark that evaluates TTS along three
+          dimensions: timbre consistency across character turns, emotional expressiveness on
+          high-tension utterances, and rhythm coherence under segmented long-form synthesis.
+          The corpus comprises real-world and generated drama scripts totaling 160 bilingual
+          scenes (approximately 10,300 utterances). A backend-agnostic Canonical Intermediate
+          Representation ensures fair cross-system comparison. Three automatic pipelines produce
+          per-utterance diagnostics: Speaker Consistency Score (SCS), Under-Acting Ratio (UAR),
+          and Rate Discontinuity Ratio (RDR). Experiments on four TTS systems show that each
+          system exhibits distinct weaknesses, and that scene-level rankings diverge
+          substantially from sentence-level metrics.
+        </p>
+      </section>
+
+      <section class="paper-section" aria-labelledby="keywords-title">
+        <h2 id="keywords-title">Keywords</h2>
+        <p class="keyword-list">
+          TTS benchmark, multi-speaker dubbing, scene-level evaluation, voice stability,
+          automatic evaluation
+        </p>
+      </section>
+
+      <section class="paper-section" aria-labelledby="figures-title">
+        <h2 id="figures-title">Key Figures</h2>
+        <p class="section-note">
+          The figures below summarize the benchmark design, the scene-level diagnostic view,
+          and the cross-system comparison highlighted in the paper.
         </p>
 
-        <div class="hero-meta">
-          <span class="hero-pill">160 bilingual scenes</span>
-          <span class="hero-pill">~10,300 utterances</span>
-          <span class="hero-pill">SCS / UAR / RDR</span>
+        <div class="figure-list">
+          <figure class="paper-figure">
+            <img src="./assets/main_pic_final.png" alt="Overview of the SceneTTS-Bench pipeline">
+            <figcaption>
+              <strong>Figure 1.</strong> Overview of SceneTTS-Bench. The benchmark combines a
+              backend-agnostic execution protocol with three evaluation pipelines for timbre
+              consistency, emotional expressiveness, and rhythm coherence.
+            </figcaption>
+          </figure>
+
+          <figure class="paper-figure">
+            <img src="./assets/exp_data.png" alt="Scene-level diagnostic example for a high-tension dialogue">
+            <figcaption>
+              <strong>Figure 2.</strong> Example scene-level diagnostics for a high-tension
+              dialogue, showing how per-utterance analysis exposes issues that are difficult to
+              capture with sentence-level evaluation alone.
+            </figcaption>
+          </figure>
+
+          <figure class="paper-figure">
+            <img src="./assets/radar_chart_v2.png" alt="Radar comparison of four TTS systems on SceneTTS-Bench">
+            <figcaption>
+              <strong>Figure 3.</strong> Radar comparison of four TTS systems across the three
+              scene-level dimensions, highlighting distinct performance profiles and failure
+              modes.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="content-card about-card">
-        <div class="section-head">
-          <p class="eyebrow">Overview</p>
-          <h2>About This Work</h2>
-        </div>
-        <div class="content-stack">
-          <p class="lead-paragraph">
-            SceneTTS-Bench reframes TTS evaluation around scene-level performance in drama
-            dubbing. Instead of scoring isolated utterances only, it checks whether a system can
-            act consistently across a whole scene.
-          </p>
+      <section class="paper-section" aria-labelledby="cases-title">
+        <h2 id="cases-title">Failure Cases</h2>
+        <div class="placeholder-box">
           <p>
-            The benchmark focuses on three dimensions that matter in multi-role dialogue:
-            <strong>SCS</strong> for timbre consistency across character turns,
-            <strong>UAR</strong> for under-acting on high-tension lines, and
-            <strong>RDR</strong> for rhythm discontinuity under segmented long-form synthesis.
-          </p>
-          <p>
-            A backend-agnostic Canonical IR keeps evaluation conditions aligned across different
-            TTS systems, while automatic pipelines produce interpretable scene-level diagnostics
-            instead of a single undifferentiated score.
+            <strong>Coming Soon.</strong> This section is reserved for representative failure
+            cases and qualitative audio comparisons that will be added in a later update.
           </p>
         </div>
-      </section>
-
-      <section class="content-card resource-card">
-        <div class="section-head">
-          <p class="eyebrow">Resources</p>
-          <h2>Project Links</h2>
-        </div>
-        <p class="resource-intro">
-          Access the evaluation code and the public benchmark dataset from the official project
-          repositories.
-        </p>
-        <div class="link-row">
-          <a class="resource-link" href="https://github.com/piedpiperG/SceneTTS-Bench-Eval" target="_blank" rel="noreferrer">
-            <span class="resource-label">GitHub</span>
-            <strong>SceneTTS-Bench-Eval</strong>
-            <em>Evaluation code, scripts, and benchmark implementation</em>
-          </a>
-          <a class="resource-link" href="https://huggingface.co/datasets/isabeth/SceneTTS-Bench" target="_blank" rel="noreferrer">
-            <span class="resource-label">Hugging Face</span>
-            <strong>SceneTTS-Bench Dataset</strong>
-            <em>Benchmark data and public dataset entry</em>
-          </a>
-        </div>
-      </section>
-
-      <section class="content-card cases-card" aria-labelledby="curated-cases-title">
-        <div class="section-head">
-          <p class="eyebrow">Curated Cases</p>
-          <h2 id="curated-cases-title">Failure Cases by Task</h2>
-        </div>
-        <div class="cases-intro">
-          <p>
-            The page below surfaces interpretable benchmark cases for the three core scene-level
-            tasks. Each example comes from the benchmark outputs already selected for manual
-            review.
-          </p>
-          <p>
-            Note: the benchmark implementation exports rhythm-jump examples under Task 4, while
-            the demo page presents them as <strong>Task 3</strong> to match the paper-facing task
-            narration.
-          </p>
-        </div>
-
-        <div class="cases-switcher" role="tablist" aria-label="Case tasks">
-          <button class="case-tab is-active" type="button" data-task="task1" role="tab" aria-selected="true">
-            Task 1
-          </button>
-          <button class="case-tab" type="button" data-task="task2" role="tab" aria-selected="false">
-            Task 2
-          </button>
-          <button class="case-tab" type="button" data-task="task3" role="tab" aria-selected="false">
-            Task 3
-          </button>
-        </div>
-
-        <div id="cases-status" class="cases-status" aria-live="polite">Loading curated cases...</div>
-        <div id="cases-root" class="cases-root"></div>
-      </section>
-
-      <section class="section-head section-block">
-        <p class="eyebrow">Figures</p>
-        <h2>Paper Figures</h2>
-      </section>
-
-      <section class="figure-grid" aria-label="Figures">
-        <article class="figure-card">
-          <div class="figure-copy">
-            <p class="figure-label">Figure 1</p>
-            <h3>Benchmark Overview</h3>
-            <p>
-              The overall pipeline combines a backend-agnostic execution protocol with three
-              diagnostic evaluation tracks for timbre consistency, emotional expressiveness,
-              and rhythm coherence.
-            </p>
-          </div>
-          <img src="./assets/main_pic_final.png" alt="Overview of SceneTTS-Bench benchmark pipeline">
-        </article>
-
-        <article class="figure-card">
-          <div class="figure-copy">
-            <p class="figure-label">Figure 2</p>
-            <h3>Scene-Level Diagnostic Example</h3>
-            <p>
-              An example scene showing how SceneTTS-Bench surfaces per-utterance issues in
-              speaker stability, emotional delivery, and segmented synthesis rhythm.
-            </p>
-          </div>
-          <img src="./assets/exp_data.png" alt="Example diagnostics for a high-tension dialogue scene">
-        </article>
-
-        <article class="figure-card">
-          <div class="figure-copy">
-            <p class="figure-label">Figure 3</p>
-            <h3>System Comparison Radar</h3>
-            <p>
-              A compact comparison of four TTS systems across the three scene-level benchmark
-              dimensions, highlighting different model strengths and failure modes.
-            </p>
-          </div>
-          <img src="./assets/radar_chart_v2.png" alt="Radar chart comparing four TTS systems on SceneTTS-Bench">
-        </article>
       </section>
     </main>
 
