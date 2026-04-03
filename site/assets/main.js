@@ -20,8 +20,8 @@ const CASE_TITLES = {
 };
 
 const CASE_DESCRIPTIONS = {
-  task1: "Each group includes the ref voice plus HIGH / MEDIUM / NORMAL utterances from the same role.",
-  task2: "Only low-arousal and low-dominance under-acting examples are shown, with prompt text and three VAD statistics.",
+  task1: "Each group includes the ref voice, the strongest drift examples, and three stable normal references from the same role.",
+  task2: "Only insufficient-arousal and insufficient-dominance under-acting examples are shown, with prompt text and three affective scores.",
   task3: "Each row is a prev / cur pair with an elevated rhythm discontinuity ratio.",
 };
 
@@ -47,8 +47,8 @@ function makeMetaPills(parts) {
   return wrap;
 }
 
-function makeAudioCard({ title, subtitle, text, audioPath, stats = [] }) {
-  const card = el("article", "audio-card");
+function makeAudioCard({ title, subtitle, text, audioPath, stats = [], cardClass = "" }) {
+  const card = el("article", ["audio-card", cardClass].filter(Boolean).join(" "));
   card.appendChild(el("div", "audio-card-label", title));
   if (subtitle) {
     card.appendChild(el("p", "audio-card-subtitle", subtitle));
@@ -78,25 +78,42 @@ function renderTask1(groups) {
     section.appendChild(el("h3", "case-group-title", `Case ${index + 1}`));
     section.appendChild(makeMetaPills([group.language.toUpperCase()]));
 
-    section.appendChild(
+    const refRow = el("div", "case-grid case-grid-1");
+    refRow.appendChild(
       makeAudioCard({
         title: "Ref Voice",
         subtitle: "Reference",
         audioPath: group.ref_demo_audio_path,
       }),
     );
+    section.appendChild(refRow);
 
-    const grid = el("div", "case-grid case-grid-3");
-    [["high", "HIGH"], ["medium", "MEDIUM"], ["normal", "NORMAL"]].forEach(([key, label]) => {
-      const item = group.items[key];
-      grid.appendChild(
+    const cardsRow = el("div", "task1-five-card-grid");
+    cardsRow.appendChild(
+      makeAudioCard({
+        title: "High",
+        cardClass: "task1-case-card",
+        audioPath: group.items.high.demo_audio_path,
+      }),
+    );
+    cardsRow.appendChild(
+      makeAudioCard({
+        title: "Mid",
+        cardClass: "task1-case-card",
+        audioPath: group.items.medium.demo_audio_path,
+      }),
+    );
+    [group.items.normal, ...(group.normal_more || [])].forEach((item, extraIndex) => {
+      cardsRow.appendChild(
         makeAudioCard({
-          title: label,
+          title: `Normal ${extraIndex + 1}`,
+          cardClass: "task1-case-card",
           audioPath: item.demo_audio_path,
         }),
       );
     });
-    section.appendChild(grid);
+
+    section.appendChild(cardsRow);
     frag.appendChild(section);
   });
 
@@ -120,13 +137,16 @@ function renderTask2(groups) {
     const section = el("section", "case-group");
     section.appendChild(el("h3", "case-group-title", language.toUpperCase()));
     const grid = el("div", "case-grid case-grid-3");
-    items.forEach((item) => {
+    items.forEach((item, index) => {
+      const categoryLabel =
+        item.category === "low_arousal" ? "Insufficient arousal" : "Insufficient dominance";
       grid.appendChild(
         makeAudioCard({
-          title: item.case_id,
-          subtitle: item.category.replace("_", " "),
-          text: `Prompt: ${item.instruct_text}`,
+          title: `Case ${index + 1}`,
+          subtitle: categoryLabel,
+          text: `Prompt: ${item.prompt_text || item.instruct_text}`,
           audioPath: item.demo_audio_path,
+          cardClass: `task2-card task2-card-${language}`,
           stats: [
             `V ${Number(item.valence).toFixed(3)}`,
             `A ${Number(item.arousal).toFixed(3)}`,

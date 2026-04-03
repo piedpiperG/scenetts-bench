@@ -1,96 +1,108 @@
 [
   {
     "language": "zh",
-    "script_id": "S006_家庭伦理",
-    "backend": "qwen3-tts",
-    "role": "林岚",
+    "script_id": "S001_悬疑犯罪",
+    "backend": "indextts2",
+    "role": "顾岚",
     "group_kind": "ref_wav_high_medium_normal",
-    "ref_wav": "/workspace/liyanliang/paper/ISCOT/data/voicebank-stage4-rebuilt/voice-files/慈音妈妈.wav",
-    "ref_label": "慈音妈妈",
-    "ref_demo_audio_path": "./media/cases/task1/zh/S006_家庭伦理/qwen3-tts/林岚/ref.wav",
+    "ref_wav": "/workspace/liyanliang/paper/ISCOT/data/voicebank-stage4-rebuilt/voice-files/通姐.wav",
+    "ref_label": "通姐",
+    "ref_demo_audio_path": "./media/cases/task1/zh/S001_悬疑犯罪/indextts2/顾岚/ref.wav",
     "items": {
       "high": {
-        "script_id": "S006_家庭伦理",
-        "backend_name": "qwen3-tts",
-        "group_label": "林岚",
-        "line_id": "60",
-        "role": "林岚",
+        "script_id": "S001_悬疑犯罪",
+        "backend_name": "indextts2",
+        "group_label": "顾岚",
+        "line_id": "46",
+        "role": "顾岚",
         "level": "HIGH",
-        "score": 565.3736355128112,
-        "sim_to_centroid": 0.5364471673965454,
-        "sim_to_role_mean": 0.353120642679709,
-        "sim_to_ref_wav": 0.19505855441093445,
+        "score": 383.3738303846784,
+        "sim_to_centroid": 0.48084408044815063,
+        "sim_to_role_mean": 0.5470623426967197,
+        "sim_to_ref_wav": 0.23871974647045135,
         "threshold_high": 0.55,
         "threshold_med": 0.6,
         "threshold_source": "fixed_physical",
         "decision_rule": "triple_and",
-        "dominant_mu": 0.7026652097702026,
-        "dominant_sigma": 0.10522188246250153,
-        "dominant_size": 28,
+        "dominant_mu": 0.9306312799453735,
+        "dominant_sigma": 0.017648780718445778,
+        "dominant_size": 16,
         "quality_class": "PASS",
         "gate_reason": "pass",
-        "src_wav": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/audio/S006_家庭伦理/qwen3-tts/060_林岚.wav",
-        "ref_wav": "/workspace/liyanliang/paper/ISCOT/data/voicebank-stage4-rebuilt/voice-files/慈音妈妈.wav",
-        "target_text": "你把这笔钱写欠条，什么时候还、怎么还，今天说清楚。",
-        "reason": "sim_centroid=0.5364 | sim_role_mean=0.3531 | sim_ref_wav=0.1951 | th_high=0.5500 | th_med=0.6000 | rule=triple_and",
-        "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/tasks/task1_sim_report/S006_家庭伦理/analy/timbre_jump_by_role/qwen3-tts/林岚/HIGH/60.json",
-        "demo_audio_path": "./media/cases/task1/zh/S006_家庭伦理/qwen3-tts/林岚/high_60.wav"
+        "src_wav": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/audio/S001_悬疑犯罪/indextts2/046_顾岚.wav",
+        "ref_wav": "/workspace/liyanliang/paper/ISCOT/data/voicebank-stage4-rebuilt/voice-files/通姐.wav",
+        "target_text": "所以凶手不是我。",
+        "reason": "sim_centroid=0.4808 | sim_role_mean=0.5471 | sim_ref_wav=0.2387 | th_high=0.5500 | th_med=0.6000 | rule=triple_and",
+        "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/tasks/task1_sim_report/S001_悬疑犯罪/analy/timbre_jump_by_role/indextts2/顾岚/HIGH/46.json",
+        "demo_audio_path": "./media/cases/task1/zh/S001_悬疑犯罪/indextts2/顾岚/high_46.wav"
       },
       "medium": {
-        "script_id": "S006_家庭伦理",
-        "backend_name": "qwen3-tts",
-        "group_label": "林岚",
-        "line_id": "45",
-        "role": "林岚",
+        "script_id": "S001_悬疑犯罪",
+        "backend_name": "indextts2",
+        "group_label": "顾岚",
+        "line_id": "48",
+        "role": "顾岚",
         "level": "MEDIUM",
-        "score": 713.1725587778622,
-        "sim_to_centroid": 0.5832992792129517,
-        "sim_to_role_mean": 0.38784515029854244,
-        "sim_to_ref_wav": 0.11568301171064377,
+        "score": 302.7568002541859,
+        "sim_to_centroid": 0.5702446699142456,
+        "sim_to_role_mean": 0.5984954575697581,
+        "sim_to_ref_wav": 0.3285030722618103,
         "threshold_high": 0.55,
         "threshold_med": 0.6,
         "threshold_source": "fixed_physical",
         "decision_rule": "triple_and",
-        "dominant_mu": 0.7026652097702026,
-        "dominant_sigma": 0.10522188246250153,
-        "dominant_size": 28,
+        "dominant_mu": 0.9306312799453735,
+        "dominant_sigma": 0.017648780718445778,
+        "dominant_size": 16,
         "quality_class": "PASS",
         "gate_reason": "pass",
-        "src_wav": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/audio/S006_家庭伦理/qwen3-tts/045_林岚.wav",
-        "ref_wav": "/workspace/liyanliang/paper/ISCOT/data/voicebank-stage4-rebuilt/voice-files/慈音妈妈.wav",
-        "target_text": "林舟，别骂人。",
-        "reason": "sim_centroid=0.5833 | sim_role_mean=0.3878 | sim_ref_wav=0.1157 | th_high=0.5500 | th_med=0.6000 | rule=triple_and",
-        "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/tasks/task1_sim_report/S006_家庭伦理/analy/timbre_jump_by_role/qwen3-tts/林岚/MEDIUM/45.json",
-        "demo_audio_path": "./media/cases/task1/zh/S006_家庭伦理/qwen3-tts/林岚/medium_45.wav"
+        "src_wav": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/audio/S001_悬疑犯罪/indextts2/048_顾岚.wav",
+        "ref_wav": "/workspace/liyanliang/paper/ISCOT/data/voicebank-stage4-rebuilt/voice-files/通姐.wav",
+        "target_text": "我撒什么谎？",
+        "reason": "sim_centroid=0.5702 | sim_role_mean=0.5985 | sim_ref_wav=0.3285 | th_high=0.5500 | th_med=0.6000 | rule=triple_and",
+        "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/tasks/task1_sim_report/S001_悬疑犯罪/analy/timbre_jump_by_role/indextts2/顾岚/MEDIUM/48.json",
+        "demo_audio_path": "./media/cases/task1/zh/S001_悬疑犯罪/indextts2/顾岚/medium_48.wav"
       },
       "normal": {
-        "script_id": "S006_家庭伦理",
-        "backend_name": "qwen3-tts",
-        "group_label": "林岚",
-        "line_id": "6",
-        "role": "林岚",
+        "script_id": "S001_悬疑犯罪",
+        "backend_name": "indextts2",
+        "group_label": "顾岚",
+        "line_id": "2",
+        "role": "顾岚",
         "level": "NORMAL",
         "score": 0.0,
-        "sim_to_centroid": 0.7737710475921631,
-        "sim_to_role_mean": 0.5263704778971495,
-        "sim_to_ref_wav": 0.17926762998104095,
+        "sim_to_centroid": 0.9539016485214233,
+        "sim_to_role_mean": 0.7579254733191596,
+        "sim_to_ref_wav": 0.480918288230896,
         "threshold_high": 0.55,
         "threshold_med": 0.6,
         "threshold_source": "fixed_physical",
         "decision_rule": "triple_and",
-        "dominant_mu": 0.7026652097702026,
-        "dominant_sigma": 0.10522188246250153,
-        "dominant_size": 28,
+        "dominant_mu": 0.9306312799453735,
+        "dominant_sigma": 0.017648780718445778,
+        "dominant_size": 16,
         "quality_class": "PASS",
         "gate_reason": "pass",
-        "src_wav": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/audio/S006_家庭伦理/qwen3-tts/006_林岚.wav",
-        "ref_wav": "/workspace/liyanliang/paper/ISCOT/data/voicebank-stage4-rebuilt/voice-files/慈音妈妈.wav",
-        "target_text": "保送资料要两万八？你当我没办过事？",
-        "reason": "sim_centroid=0.7738 | sim_role_mean=0.5263704778971495 | sim_ref_wav=0.17926762998104095 | normal",
-        "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/tasks/task1_sim_report/S006_家庭伦理/analy/timbre_jump_by_role/qwen3-tts/林岚/NORMAL/6.json",
-        "demo_audio_path": "./media/cases/task1/zh/S006_家庭伦理/qwen3-tts/林岚/normal_6.wav"
+        "src_wav": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/audio/S001_悬疑犯罪/indextts2/002_顾岚.wav",
+        "ref_wav": "/workspace/liyanliang/paper/ISCOT/data/voicebank-stage4-rebuilt/voice-files/通姐.wav",
+        "target_text": "我只是觉得，事情发生在哪里，就该在哪里说清楚。",
+        "reason": "sim_centroid=0.9539 | sim_role_mean=0.7579254733191596 | sim_ref_wav=0.480918288230896 | normal",
+        "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/tasks/task1_sim_report/S001_悬疑犯罪/analy/timbre_jump_by_role/indextts2/顾岚/NORMAL/2.json",
+        "demo_audio_path": "./media/cases/task1/zh/S001_悬疑犯罪/indextts2/顾岚/normal_2.wav"
       }
-    }
+    },
+    "normal_more": [
+      {
+        "line_id": "4",
+        "target_text": "买过不代表用过，我一年买三把，家里工具箱一堆。",
+        "demo_audio_path": "./media/cases/task1/zh/S001_悬疑犯罪/indextts2/顾岚/normal_4.wav"
+      },
+      {
+        "line_id": "6",
+        "target_text": "你也说了是‘旁边’，不是‘插在我手里’。",
+        "demo_audio_path": "./media/cases/task1/zh/S001_悬疑犯罪/indextts2/顾岚/normal_6.wav"
+      }
+    ]
   },
   {
     "language": "zh",
@@ -183,7 +195,19 @@
         "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/tasks/task1_sim_report/S017_恐怖惊悚/analy/timbre_jump_by_role/fish-s2/林乔/NORMAL/2.json",
         "demo_audio_path": "./media/cases/task1/zh/S017_恐怖惊悚/fish-s2/林乔/normal_2.wav"
       }
-    }
+    },
+    "normal_more": [
+      {
+        "line_id": "7",
+        "target_text": "不干净是指什么？有人闹事，还是……有声音？",
+        "demo_audio_path": "media/cases/task1/zh/S017_恐怖惊悚/fish-s2/林乔/normal_7.wav"
+      },
+      {
+        "line_id": "11",
+        "target_text": "他在抖。沈砚，他是不是在撒谎？",
+        "demo_audio_path": "media/cases/task1/zh/S017_恐怖惊悚/fish-s2/林乔/normal_11.wav"
+      }
+    ]
   },
   {
     "language": "zh",
@@ -276,7 +300,19 @@
         "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/zh/tasks/task1_sim_report/S003_悬疑犯罪/analy/timbre_jump_by_role/indextts2/沈砚/NORMAL/1.json",
         "demo_audio_path": "./media/cases/task1/zh/S003_悬疑犯罪/indextts2/沈砚/normal_1.wav"
       }
-    }
+    },
+    "normal_more": [
+      {
+        "line_id": "3",
+        "target_text": "我需要你确认尸体和痕迹，别的我来。",
+        "demo_audio_path": "media/cases/task1/zh/S003_悬疑犯罪/indextts2/沈砚/normal_3.wav"
+      },
+      {
+        "line_id": "5",
+        "target_text": "他没留名，只说‘司机不该死’。",
+        "demo_audio_path": "media/cases/task1/zh/S003_悬疑犯罪/indextts2/沈砚/normal_5.wav"
+      }
+    ]
   },
   {
     "language": "en",
@@ -369,7 +405,19 @@
         "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/en/tasks/task1_sim_report/S006_FamilyDrama/analy/timbre_jump_by_role/fish-s2/Marisol_Vega/NORMAL/4.json",
         "demo_audio_path": "./media/cases/task1/en/S006_FamilyDrama/fish-s2/Marisol_Vega/normal_4.wav"
       }
-    }
+    },
+    "normal_more": [
+      {
+        "line_id": "2",
+        "target_text": "Because the mail lands where it lands, Elena.",
+        "demo_audio_path": "media/cases/task1/en/S006_FamilyDrama/fish-s2/Marisol_Vega/normal_2.wav"
+      },
+      {
+        "line_id": "6",
+        "target_text": "Then cut your lime and let it be.",
+        "demo_audio_path": "media/cases/task1/en/S006_FamilyDrama/fish-s2/Marisol_Vega/normal_6.wav"
+      }
+    ]
   },
   {
     "language": "en",
@@ -462,7 +510,19 @@
         "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/en/tasks/task1_sim_report/S026_WarHistory/analy/timbre_jump_by_role/qwen3-tts/Captain_Elias_Marlowe/NORMAL/3.json",
         "demo_audio_path": "./media/cases/task1/en/S026_WarHistory/qwen3-tts/Captain_Elias_Marlowe/normal_3.wav"
       }
-    }
+    },
+    "normal_more": [
+      {
+        "line_id": "1",
+        "target_text": "Lieutenant Voss, shut that door and bring the lamp closer.",
+        "demo_audio_path": "media/cases/task1/en/S026_WarHistory/qwen3-tts/Captain_Elias_Marlowe/normal_1.wav"
+      },
+      {
+        "line_id": "4",
+        "target_text": "It instructs me to call artillery on Grid F-17.",
+        "demo_audio_path": "media/cases/task1/en/S026_WarHistory/qwen3-tts/Captain_Elias_Marlowe/normal_4.wav"
+      }
+    ]
   },
   {
     "language": "en",
@@ -555,6 +615,18 @@
         "source_json": "/workspace/liyanliang/paper/ISCOT/output/benchmark/en/tasks/task1_sim_report/S024_SciFiAdventure/analy/timbre_jump_by_role/indextts2/Captain_Mara_Vance/NORMAL/1.json",
         "demo_audio_path": "./media/cases/task1/en/S024_SciFiAdventure/indextts2/Captain_Mara_Vance/normal_1.wav"
       }
-    }
+    },
+    "normal_more": [
+      {
+        "line_id": "4",
+        "target_text": "State the reason, KESTREL.",
+        "demo_audio_path": "media/cases/task1/en/S024_SciFiAdventure/indextts2/Captain_Mara_Vance/normal_4.wav"
+      },
+      {
+        "line_id": "6",
+        "target_text": "Define contaminated.",
+        "demo_audio_path": "media/cases/task1/en/S024_SciFiAdventure/indextts2/Captain_Mara_Vance/normal_6.wav"
+      }
+    ]
   }
 ]
