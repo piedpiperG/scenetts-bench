@@ -92,7 +92,6 @@ function renderTask1(groups) {
       grid.appendChild(
         makeAudioCard({
           title: label,
-          subtitle: `line ${item.line_id}`,
           audioPath: item.demo_audio_path,
         }),
       );
