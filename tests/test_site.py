@@ -30,7 +30,9 @@ class SiteSmokeTest(unittest.TestCase):
         self.assertIn(">Abstract<", self.html)
         self.assertIn(">Keywords<", self.html)
         self.assertIn(">Failure Cases<", self.html)
-        self.assertIn("Coming Soon", self.html)
+        self.assertIn("Task 1", self.html)
+        self.assertIn("Task 2", self.html)
+        self.assertIn("Task 3", self.html)
 
     def test_page_references_three_paper_figures(self):
         for image_name in (
@@ -41,15 +43,20 @@ class SiteSmokeTest(unittest.TestCase):
             self.assertIn(f'./assets/{image_name}', self.html)
             self.assertTrue((ASSETS_DIR / image_name).exists(), image_name)
 
-    def test_page_uses_simple_footer_script(self):
-        self.assertNotIn("loadCuratedCases", self.js)
-        self.assertNotIn("cases-root", self.html)
+    def test_page_loads_curated_cases_ui(self):
+        self.assertIn("loadCuratedCases", self.js)
+        self.assertIn('id="cases-root"', self.html)
+        self.assertIn("ref_demo_audio_path", (ROOT / "site" / "data" / "task1_cases.json").read_text(encoding="utf-8"))
         self.assertIn("footer-year", self.js)
 
     def test_page_drops_decorative_web_font_setup(self):
         self.assertNotIn("fonts.googleapis.com", self.html)
         self.assertNotIn("Instrument Serif", self.css)
         self.assertNotIn("Space Grotesk", self.css)
+
+    def test_styles_define_case_layout(self):
+        self.assertIn(".case-grid-3", self.css)
+        self.assertIn(".task-switch", self.css)
 
 
 if __name__ == "__main__":

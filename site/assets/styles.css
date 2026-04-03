@@ -149,6 +149,130 @@ img {
   align-items: center;
 }
 
+.cases-panel {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.task-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.task-switch {
+  padding: 10px 16px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.task-switch.is-active,
+.task-switch:hover {
+  background: #1f4d87;
+  border-color: #1f4d87;
+  color: #fff;
+}
+
+.cases-status,
+.cases-intro-text,
+.audio-card-subtitle,
+.audio-card-text {
+  color: var(--text-muted);
+}
+
+.cases-intro {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+}
+
+.cases-intro-title,
+.case-group-title {
+  margin: 0;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+}
+
+#cases-root {
+  display: grid;
+  gap: 22px;
+}
+
+.case-group {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+}
+
+.case-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.case-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.audio-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.audio-card-label {
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.audio-card-subtitle,
+.audio-card-text {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.audio-player {
+  width: 100%;
+}
+
+.case-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-pill {
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -189,5 +313,11 @@ img {
 
   .placeholder-box {
     min-height: 120px;
+  }
+
+  .case-grid-2,
+  .case-grid-3,
+  .case-grid-4 {
+    grid-template-columns: 1fr;
   }
 }

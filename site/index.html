@@ -90,11 +90,20 @@
 
       <section class="paper-section" aria-labelledby="cases-title">
         <h2 id="cases-title">Failure Cases</h2>
-        <div class="placeholder-box">
-          <p>
-            <strong>Coming Soon.</strong> This section is reserved for representative failure
-            cases and qualitative audio comparisons that will be added in a later update.
-          </p>
+        <p class="section-note">
+          Representative audio cases are organized by benchmark task. Task 1 presents
+          ref-voice-guided timbre-drift groups, Task 2 presents four-way emotional tension
+          comparisons, and Task 3 corresponds to the rhythm-jump examples from the benchmark
+          pipeline.
+        </p>
+        <div class="cases-panel">
+          <div class="task-switcher" role="tablist" aria-label="Curated task cases">
+            <button class="task-switch is-active" type="button" data-task="task1">Task 1</button>
+            <button class="task-switch" type="button" data-task="task2">Task 2</button>
+            <button class="task-switch" type="button" data-task="task3">Task 3</button>
+          </div>
+          <p class="cases-status" id="cases-status">Loading curated cases…</p>
+          <div id="cases-root" aria-live="polite"></div>
         </div>
       </section>
     </main>
