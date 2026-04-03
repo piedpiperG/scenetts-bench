@@ -92,7 +92,6 @@ img {
 }
 
 .hero-subtitle,
-.content-card p,
 .footer {
   color: var(--text-dim);
   line-height: 1.8;
@@ -104,11 +103,28 @@ img {
   font-size: 1.05rem;
 }
 
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.hero-pill {
+  padding: 10px 14px;
+  border: 1px solid rgba(127, 90, 240, 0.12);
+  border-radius: 999px;
+  background: var(--panel-strong);
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
 .link-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 30px;
+  margin-top: 24px;
 }
 
 .resource-link {
@@ -152,9 +168,223 @@ img {
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
-.content-card p {
+.content-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.cases-card {
+  display: grid;
+  gap: 20px;
+}
+
+.cases-intro {
+  display: grid;
+  gap: 12px;
+}
+
+.content-card p,
+.resource-intro,
+.figure-copy p {
   margin: 0;
   font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.lead-paragraph {
+  color: var(--text);
+  font-size: 1.08rem;
+}
+
+.section-block {
+  margin-top: 8px;
+  padding: 0 4px;
+}
+
+.cases-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.case-tab {
+  padding: 12px 16px;
+  border: 1px solid rgba(24, 33, 43, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.case-tab:hover {
+  transform: translateY(-1px);
+  border-color: rgba(127, 90, 240, 0.28);
+}
+
+.case-tab.is-active {
+  border-color: rgba(127, 90, 240, 0.34);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.cases-status {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.cases-root {
+  display: grid;
+  gap: 18px;
+}
+
+.task-intro {
+  display: grid;
+  gap: 6px;
+}
+
+.task-title {
+  margin: 0;
+  font-size: 1.45rem;
+  font-family: "Instrument Serif", Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.task-copy {
+  max-width: 70ch;
+}
+
+.task-group-card {
+  display: grid;
+  gap: 16px;
+  padding: 22px;
+  border: 1px solid rgba(24, 33, 43, 0.08);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.task-group-head {
+  display: grid;
+  gap: 4px;
+}
+
+.task-group-title {
+  margin: 0;
+  font-size: 1.18rem;
+}
+
+.task-group-subtitle {
+  margin: 0;
+  color: var(--text-dim);
+}
+
+.case-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-pill {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(24, 33, 43, 0.06);
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.case-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.case-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.case-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.audio-case {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(24, 33, 43, 0.08);
+}
+
+.audio-case-label {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.audio-case-role {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.audio-case-text {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.audio-player {
+  width: 100%;
+}
+
+.audio-case-metrics {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.figure-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.figure-card {
+  display: grid;
+  gap: 20px;
+}
+
+.figure-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.figure-label {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.figure-copy h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: "Instrument Serif", Georgia, serif;
+  letter-spacing: -0.02em;
 }
 
 .figure-card img {
@@ -186,11 +416,30 @@ img {
     padding: 24px;
   }
 
+  .task-group-card {
+    padding: 18px;
+  }
+
   .link-row {
     grid-template-columns: 1fr;
   }
 
   .hero-card h1 {
     font-size: clamp(2.6rem, 14vw, 3.8rem);
+  }
+
+  .hero-meta {
+    gap: 8px;
+  }
+
+  .hero-pill {
+    width: 100%;
+    text-align: center;
+  }
+
+  .case-grid-4,
+  .case-grid-3,
+  .case-grid-2 {
+    grid-template-columns: 1fr;
   }
 }
